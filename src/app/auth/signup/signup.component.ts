@@ -43,10 +43,13 @@ export class SignupComponent implements OnInit {
     this.toggleMode.emit(); // Gửi sự kiện để chuyển đổi chế độ
   }
   onSubmitRegister(form: NgForm) {
+   
     if(form.valid){
+      console.log(this.isRegisterMode)
       const forms = form.value as registerRequest;
       this.formData = { ...this.formData, ...forms };
       if(!this.isRegisterMode){
+      
         this.http.post('http://localhost:5000/auth/signup',this.formData)
         .subscribe({
           next: (v)=> console.log(v),

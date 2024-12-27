@@ -1,5 +1,5 @@
 
-<form (ngSubmit)="onSubmitRegister(myForm)" class="form row g-3" #myForm="ngForm" [ngStyle]="{'margin-top': isRegisterMode ? '200px' : '100px'}">
+<form (ngSubmit)="onSubmitRegister(myForm)" class="form row g-3" #myForm="ngForm" [ngStyle]="{'margin-top': isRegisterMode ? '100px' : '100px'}">
   <div class="form-group" *ngIf="!isRegisterMode">
     <label for="registerUsername">Tên tài khoản</label>
     <input
@@ -145,7 +145,7 @@
 
   <div class="btn-login">
     <button type="submit" *ngIf="!isRegisterMode" (click)="onRegisterMode(myForm)" class="btn btn-primary">Tiếp tục</button>
-    <button type="submit" *ngIf="isRegisterMode"  class="btn btn-primary">Đăng ký</button>
+    <button type="submit" *ngIf="isRegisterMode" (click)="onRegisterMode(myForm)" class="btn btn-primary">Đăng ký</button>
   </div>
 
   <div class="form-group form-check form-option">

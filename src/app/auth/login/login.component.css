@@ -1,6 +1,6 @@
 .form {
     width: 100%;
-    max-width: 500px; /* Đặt chiều rộng tối đa của form */
+    min-width: 500px; /* Đặt chiều rộng tối đa của form */
     padding: 20px;
     margin: 10px;
     border: 1px solid #ddd;

@@ -11,14 +11,14 @@ import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, HttpClientModule, AuthComponent, CommonModule],
+  imports: [RouterOutlet, RouterLink, HttpClientModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   template: '<app-category></app-category>',
   providers: [EmployeeService, AuthService]
 })
 export class AppComponent implements OnInit {
-
+  footerPage = false;
   constructor(public authService: AuthService, private router: Router,
     public cookieService: CookieService, private cdRef: ChangeDetectorRef) {}
   ngOnInit(): void {
@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
 
   isClickFormLogin() {
     this.cookieService.set('isFormLogin', String(true));
+    this.footerPage = true;
   }
 
   ngAfterViewInit() {

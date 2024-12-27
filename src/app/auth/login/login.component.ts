@@ -13,8 +13,11 @@ import { showResponseSuccess } from '../../response/sweetAlert';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit,OnDestroy {
   constructor(private http:HttpClient,private cookieService: CookieService, private router: Router){}
+  ngOnDestroy(): void {
+    
+  }
   ngOnInit(): void {
    if(this.cookieService.get('isFormLogin') === 'false'){
       this.cookieService.set('isFormLogin',String(true));
@@ -42,7 +45,6 @@ export class LoginComponent implements OnInit {
        
     })
     }else {
-      
       console.log('Form is invalid');
     }
   }

@@ -7,3 +7,11 @@ export const showResponseSuccess = (res:string)=>{
         text: `${res}`,
       });
 }
+
+export const showResponseFailure = (res:string)=>{
+  Swal.fire({
+    icon: "error",
+    title: `Thất bại`,
+    text: `${res}`,
+  });
+}

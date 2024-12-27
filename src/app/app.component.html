@@ -52,7 +52,6 @@
   </nav>
   <main class="d-flex" >
     <article class="col-md-9 bg-body-secondary full-width"
-    [ngStyle]="{'height.px': (cookieService.get('isFormLogin') === 'true' ? 500 : null)}"
     >
       <div class="table-container">
         <router-outlet></router-outlet>
@@ -62,7 +61,7 @@
 
   </main>
 
-  <footer class="row" *ngIf="cookieService.get('isFormLogin') === 'false'  ">
+  <footer class="row" *ngIf="!footerPage">
       <div class="col-md-4 mt-2">
             <img width="200" height="100" src="/your-own-library-landing-page-template_151150-680.jpg" alt="" srcset="">
             <p>Địa chỉ: 27, Võ Văn Vân, Vĩnh Lộc, TP.HCM</p>
