@@ -1,0 +1,18 @@
+.container-image{
+    width: 720px;
+    height: auto;
+    background-color: #fff;
+    padding:5px;
+    margin-right: 10px;
+}
+
+.checked {
+    color: orange;
+  }
+
+  .input-quantity{
+    text-align: center;
+    height: 50px;
+  }
+
+  
